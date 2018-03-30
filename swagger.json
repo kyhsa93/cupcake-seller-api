@@ -1,0 +1,1215 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Cupcake  seller rest api",
+    "description": "This api for cupcake seller client.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:5000",
+  "basePath": "/",
+  "paths": {
+    "/auth": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "access": {
+                  "type": "string"
+                },
+                "refresh": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "access": {
+                  "type": "string"
+                },
+                "refresh": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "409": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Users"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "email": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/shops": {
+      "post": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "number"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "category": {
+                "type": "number"
+              }
+            }
+          }
+        },
+        {
+          "name": "image",
+          "in": "formData",
+          "type": "file"
+        }],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                },
+                "id": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "string"
+                },
+                "longitude": {
+                  "type": "string"
+                },
+                "shopCategoryId": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "409": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Shops"
+        ],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                    "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "latitude": {
+                        "type": "number"
+                      },
+                      "longitude": {
+                        "type": "number"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "deletedAt": {
+                        "type": "string"
+                      },
+                      "userId": {
+                        "type": "number"
+                      },
+                      "shopCategoryId": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/shops/:id": {
+      "get": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "params",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "latitude": {
+                  "type": "number"
+                },
+                "longitude": {
+                  "type": "number"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "deletedAt": {
+                  "type": "string"
+                },
+                "userId": {
+                  "type": "number"
+                },
+                "shopCategoryId": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "params",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "number"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "category": {
+                "type": "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Shops"
+        ],
+        "parameters": [{
+          "name": "params",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "number"
+          }
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "number"
+              },
+              "latitude": {
+                "type": "number"
+              },
+              "longitude": {
+                "type": "number"
+              },
+              "category": {
+                "type": "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/coupons": {
+      "post": {
+        "tags": [
+          "Coupons"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "number"
+              },
+              "emotion": {
+                "type": "string"
+              },
+              "shop": {
+                "type": "number"
+              },
+              "count": {
+                "type": "number"
+              },
+              "expire": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "price": {
+                    "type": "number"
+                  },
+                  "customerId": {
+                    "type": "string"
+                  },
+                  "shopId": {
+                    "type": "string"
+                  },
+                  "productId": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "204": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/products": {
+      "post": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string"
+              },
+              "shop": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "order": {
+                  "type": "number"
+                },
+                "id": {
+                  "type": "number"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string"
+                },
+                "shopId": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [{
+          "name": "shop",
+          "in": "query",
+          "required": true,
+          "type": "string"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "price": {
+                        "type": "string"
+                      },
+                      "order": {
+                        "type": "string"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "deletedAt": {
+                        "type": "string"
+                      },
+                      "shopId": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/products/:id": {
+      "get": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "required": true
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string"
+                },
+                "order": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "deletedAt": {
+                  "type": "string"
+                },
+                "shopId": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "404": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "shop",
+          "in": "query",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "price": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Products"
+        ],
+        "parameters": [{
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "name": "shop",
+          "in": "query",
+          "type": "number",
+          "required": true
+        },
+        {
+          "name": "body",
+          "in": "body",
+          "schema": {
+            "type": "object",
+            "properties": {
+              "price": {
+                "type": "number"
+              },
+              "name": {
+                "type": "string"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/orders": {
+      "post": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [{
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "customer": {
+                "type" : "number"
+              },
+              "price": {
+                "type" : "number"
+              },
+              "shop": {
+                "type" : "number"
+              },
+              "product": {
+                "type" : "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "201": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "customerId": {
+                  "type": "string"
+                },
+                "price": {
+                  "type": "string"
+                },
+                "shopId": {
+                  "type": "string"
+                },
+                "productId": {
+                  "type": "string"
+                },
+                "createdAt": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "type": "string"
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [{
+          "name": "shop",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "number"
+                      },
+                      "customerId": {
+                        "type": "number"
+                      },
+                      "price": {
+                        "type": "number"
+                      },
+                      "createdAt": {
+                        "type": "string"
+                      },
+                      "updatedAt": {
+                        "type": "string"
+                      },
+                      "deletedAt": {
+                        "type": "string"
+                      },
+                      "shopId": {
+                        "type": "number"
+                      },
+                      "productId": {
+                        "type": "number"
+                      },
+                      "orderStatusId": {
+                        "type": "number"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/orders/:id": {
+      "get": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [{
+          "name": "id",
+          "in": "params",
+          "required": true,
+          "type": "number"
+        },
+        {
+          "name": "shop",
+          "in": "query",
+          "required": true,
+          "type": "number"
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "number"
+                },
+                "customerId": {
+                  "type": "number"
+                },
+                "price": {
+                  "type": "number"
+                },
+                "createdAt": {
+                  "type": "string"
+                },
+                "updatedAt": {
+                  "type": "string"
+                },
+                "deletedAt": {
+                  "type": "string"
+                },
+                "shopId": {
+                  "type": "number"
+                },
+                "productId": {
+                  "type": "number"
+                },
+                "orderStatusId": {
+                  "type": "number"
+                }
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [{
+            "name": "params",
+            "in": "path",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "shop",
+            "in": "query",
+            "required": true,
+            "type": "number"
+          },
+          {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type" : "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "type": "string"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Orders"
+        ],
+        "parameters": [
+          {
+            "name": "params",
+            "in": "path",
+            "required": true,
+            "type": "number"
+          },
+          {
+            "name": "shop",
+            "in": "query",
+            "required": true,
+            "type": "number"
+          },
+          {
+          "name": "body",
+          "in": "body",
+          "required": true,
+          "schema": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type" : "number"
+              }
+            }
+          }
+        }],
+        "responses": {
+          "200": {
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            }
+          },
+          "400": {
+            "schema": {
+              "type": "string"
+            }
+          },
+          "500": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
